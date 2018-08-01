@@ -3,6 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
+    <ion-title>Hackathon</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -13,16 +14,31 @@
 
 <ion-grid>
 <ion-row>
-<ion-col col-6>
+<ion-col col-md-6 >
   <ion-card padding>
     <ion-card-content>
       <ion-item>
-        <ion-icon name="ios-person" class="iconsize" color="primary" item-start></ion-icon>
+        <ion-icon name="ios-people" class="iconsize" color="primary" item-start></ion-icon>
         <h2>Total Users</h2>
             </ion-item>
             <ion-item class="mainCur">
           <h1>{{totUsers}}</h1>
           <h1>Users</h1>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-col>
+
+<ion-col col-md-6 >
+  <ion-card padding>
+    <ion-card-content>
+      <ion-item>
+        <ion-icon name="md-help" class="iconsize" color="primary" item-start></ion-icon>
+        <h2>Total Questions</h2>
+            </ion-item>
+            <ion-item class="mainCur">
+          <h1>{{totQues}}</h1>
+          <h1>Questions</h1>
       </ion-item>
     </ion-card-content>
   </ion-card>

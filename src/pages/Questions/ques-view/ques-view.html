@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar color="primary" >
+    <ion-title>Question</ion-title>
+    <ion-buttons end>
+      <button ion-button clear (click)="done()">Done</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+<ion-card>
+  <ion-card-content>
+    <ion-card-title>
+      <h2>{{ques.Question}}</h2>
+      <h1>{{ques.MainQues}}</h1>
+    </ion-card-title>
+    <ion-item>
+        <p item-start ion-text color="primary" >Option 1</p>
+        <p item-end  >{{ques.Option1}} </p>
+    </ion-item>
+    <ion-item>
+        <p item-start ion-text color="primary" >Option 2</p>
+        <p item-end  >{{ques.Option2}} </p>
+    </ion-item>
+    <ion-item>
+        <p item-start ion-text color="primary" >Option 3</p>
+        <p item-end  >{{ques.Option3}} </p>
+    </ion-item>
+    <ion-item>
+        <p item-start ion-text color="primary" >Option 4</p>
+        <p item-end  >{{ques.Option4}} </p>
+    </ion-item>
+    <ion-item>
+        <p item-start ion-text color="primary" >Option 1</p>
+        <p item-end  >{{ques.Option1}} </p>
+    </ion-item>
+    <ion-item>
+        <p item-start ion-text color="primary" >Answer</p>
+        <p item-end  >{{ques.Answer}} </p>
+    </ion-item>
+
+  </ion-card-content>
+</ion-card>
+
+
+</ion-content>

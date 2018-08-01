@@ -3,13 +3,17 @@ import { Nav, Platform } from 'ionic-angular';
 
 import { HomePage } from '../pages/home/home';
 import * as firebase from 'firebase';
+import { LoginPage } from '../pages/login/login';
+import { ViewQuestionsPage } from '../pages/Questions/view-questions/view-questions';
+import { UsersPage } from '../pages/Users/users/users';
+import { LoginMPage } from '../pages/login-m/login-m';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = "LoginPage";
+  rootPage: any;
   activePage: any;
 
 
@@ -20,6 +24,8 @@ export class MyApp {
 
     this.pages = [
       { title: 'Home', component: HomePage, icon: "home" },
+      { title: 'Users', component: UsersPage, icon: "ios-people" },
+      { title: 'Questions', component: ViewQuestionsPage, icon: "md-help" },
 
 
     ];
@@ -29,6 +35,11 @@ export class MyApp {
 
   initializeApp() {
     this.platform.ready().then(() => {
+      if(this.platform.is("core")){
+        this.rootPage=LoginPage;
+      }else{
+        this.rootPage= LoginMPage;
+      }
     });
   }
 
@@ -42,13 +53,11 @@ export class MyApp {
   }
 
   signOut() {
-/*    firebase.auth().signOut().then(() => {
-      this.nav.setRoot(MainLoginPage);
+    firebase.auth().signOut().then(() => {
+      this.nav.setRoot(LoginPage);
     }).catch((error) => {
       console.log(error.message);
     });
-  */
- this.nav.setRoot("LoginPage");
  
 }
 

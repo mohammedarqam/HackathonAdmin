@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-buttons end>
+      <button ion-button clear (click)="done()">Cancel</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-item no-lines class="content">
+  <h1 class="title" item-start>Add Question</h1>
+  </ion-item>
+
+
+
+  <ion-card>
+      <ion-card-content>
+    
+    
+    <ion-item>
+      <ion-label stacked color="primary">Enter Question</ion-label>
+      <ion-textarea type="text" [(ngModel)]="question" autofocus ></ion-textarea>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label stacked color="primary">Enter Main Question</ion-label>
+      <ion-input type="text" [(ngModel)]="mainquestion"  ></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label stacked color="primary">Option 1</ion-label>
+      <ion-input type="text" [(ngModel)]="option1"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label stacked color="primary">Option 2</ion-label>
+      <ion-input type="text" [(ngModel)]="option2"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label stacked color="primary">Option 3</ion-label>
+      <ion-input type="text" [(ngModel)]="option3"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label stacked color="primary">Option 4</ion-label>
+      <ion-input type="text" [(ngModel)]="option4"></ion-input>
+    </ion-item>
+    
+    <ion-item *ngIf="option1&&option2&&option3&&option4" >
+      <ion-label stacked color="primary">Answer</ion-label>
+      <ion-select [(ngModel)]="answer">
+        <ion-option *ngIf="option1" [value]="option1">{{option1}}</ion-option>
+        <ion-option *ngIf="option2" [value]="option2">{{option2}}</ion-option>
+        <ion-option *ngIf="option3" [value]="option3">{{option3}}</ion-option>
+        <ion-option *ngIf="option4" [value]="option4">{{option4}}</ion-option>
+      </ion-select>
+    </ion-item>
+    
+    <button ion-button block (click)="addQues()" [disabled]="!mainquestion||!question||!option1||!option2||!option3||!option4||!answer">Add Question</button>
+    
+    </ion-card-content>
+    </ion-card>
+    
+</ion-content>

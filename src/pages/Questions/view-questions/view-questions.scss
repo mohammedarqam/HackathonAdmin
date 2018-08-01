@@ -1,0 +1,46 @@
+page-view-questions {
+.addPageI{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 80px;
+}
+.addPageC{
+    background-color: map-get($colors,primary);
+    cursor: pointer;
+    
+}
+.addPageT{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 20px;
+}
+.card{
+    height: 200px;
+}
+.editBtns {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-transition: .5s ease;
+    transition: .5s ease;
+    opacity: 0;
+  }
+
+  .card:hover .mainContent {
+    opacity: 0.3;
+  }
+  
+   .card:hover .editBtns {
+    opacity: 1;
+  }
+}

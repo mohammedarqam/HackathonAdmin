@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Hackathon</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+  <ion-item no-lines class="content">
+  <h1 class="title" item-start>Questions</h1>
+  </ion-item>
+  <ion-searchbar item-end animated="true" placeholder="Search a Question" [(ngModel)]="searchBar" (ionInput)="getItems(searchBar)"></ion-searchbar>
+  </ion-row>
+  </ion-grid>
+
+
+<ion-grid>
+  <ion-row>
+    <ion-col col-md-3>
+      <ion-card class="addPageC" (click)="AddQues()" >
+        <ion-card-content>
+          <h1 class="addPageI">
+            +
+          </h1>
+          <h1 class="addPageT">
+            Question
+          </h1>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    <ion-col col-md-3 *ngFor="let question of questions" >
+    <ion-card>
+    <ion-card-content>
+      <div class="mainContent">
+      <ion-card-title>
+        {{question.MainQues}}
+      </ion-card-title>
+      </div>
+        <div class="editBtns">
+          <button class="btnTrash" icon-only ion-button color="primary" (click)="viewConfirm(question)" >
+            <ion-icon name="eye"></ion-icon>
+          </button>
+          <button class="btnTrash" icon-only ion-button color="danger" (click)="delConfirm(question)" >
+            <ion-icon name="trash"></ion-icon>
+          </button>
+        </div>
+    </ion-card-content>
+  </ion-card>
+</ion-col>
+</ion-row>
+</ion-grid>
+
+
+
+
+</ion-content>

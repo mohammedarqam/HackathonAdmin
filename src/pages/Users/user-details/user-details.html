@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar color="primary" >
+    <ion-title>User</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-content>
+      <ion-card-title>
+        {{user.Name}}
+      </ion-card-title>
+      <ion-item>
+        <p item-start ion-text color="primary" >Phone</p>
+        <p item-end  >{{user.PhoneNo}} </p>
+      </ion-item>
+      <ion-item>
+        <p item-start ion-text color="primary" >Email</p>
+        <p item-end  >{{user.Email}} </p>
+      </ion-item>
+      <ion-item>
+        <p item-start ion-text color="primary" >College</p>
+        <p item-end >{{user.College}} </p>
+      </ion-item>
+      <ion-item>
+        <p item-start ion-text color="primary" >Branch</p>
+        <p item-end >{{user.Branch}} </p>
+      </ion-item>
+      <ion-item>
+        <p item-start ion-text color="primary" >Year</p>
+        <p item-end >{{user.Year}} </p>
+      </ion-item>
+      <ion-item>
+        <p item-start ion-text color="primary" >Experience</p>
+        <p item-end class="Plevel" >{{user.Plevel}} </p>
+      </ion-item>
+      <ion-item>
+        <p item-start ion-text color="primary" >Platform</p>
+        <p item-end >{{user.Platform}} </p>
+      </ion-item>
+      <ion-item>
+        <p item-start ion-text color="primary" >Time</p>
+        <p item-end >{{user.TimeStamp}} </p>
+      </ion-item>
+</ion-card-content>
+  </ion-card>
+
+</ion-content>

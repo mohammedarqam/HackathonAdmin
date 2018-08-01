@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, MenuController, LoadingController, ToastController } from 'ionic-angular';
-//import * as firebase from 'firebase';
+import * as firebase from 'firebase';
+import { HomePage } from '../home/home';
 
 
-@IonicPage()
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
@@ -20,48 +20,31 @@ export class LoginPage {
     public toastCtrl: ToastController,
   ) {
     this.menuCtrl.enable(false);
-  }
-
-  ionViewDidEnter() {
-    this.userCheck();
-  }
-
-  userCheck() {
-    let loading = this.loadingCtrl.create({
-      content: 'Please wait...'
-    });
-
-    loading.present();
-/*
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-     this.gtHome();
+        this.navCtrl.setRoot(HomePage);
       }else{
-        this.lemail = null;
-        this.lpass = null;
     }
     });
-*/    loading.dismiss();
-
   }
+
+
 
   login() {
     let loading = this.loadingCtrl.create({
       content: 'Logging In...'
     });
     loading.present();
-/*
+
     firebase.auth().signInWithEmailAndPassword(this.lemail, this.lpass).catch(function (error) {
       alert(error.message);
     }).then(() => {
-      this.userCheck();
+      this.navCtrl.setRoot(HomePage);
+      this.presentToast("Logged In");
   });
-*/  loading.dismiss();
+  loading.dismiss();
   }
 
-  gtHome() {
-    this.navCtrl.setRoot("HomePage");
-  }
 
   presentToast(msg) {
     let toast = this.toastCtrl.create({
